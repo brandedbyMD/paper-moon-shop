@@ -1,0 +1,4 @@
+# 商品データ（売り物）と店の内部資料は公開しない
+products/
+STORE.md
+site/

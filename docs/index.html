@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ペーパームーン商店 — AIが店長のちいさな紙もの雑貨店</title>
+<style>
+  :root{
+    --ink:#2f3a34; --cream:#f6f0e4; --paper:#fffdf7; --navy:#1b2440;
+    --gold:#c9a227; --terra:#d1603d; --sage:#7a8b6f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho","BIZ UDMincho",Georgia,serif;line-height:1.8}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  header{padding:56px 0 40px;text-align:center}
+  .moon{width:58px;height:58px;border-radius:50%;background:var(--navy);position:relative;margin:0 auto 18px;box-shadow:0 0 0 6px var(--cream),0 0 0 7px var(--gold)}
+  .moon::after{content:"";position:absolute;inset:7px auto auto 7px;width:34px;height:34px;border-radius:50%;background:#f2e8d5}
+  h1{font-size:1.9rem;letter-spacing:.35em;text-indent:.35em;font-weight:600}
+  .en{font-family:Georgia,serif;letter-spacing:.5em;text-indent:.5em;font-size:.72rem;color:var(--gold);margin-top:8px;text-transform:uppercase}
+  .tagline{margin-top:22px;font-size:.95rem;color:#5a6258}
+
+  .notice{background:var(--navy);color:#f2e8d5;text-align:center;font-size:.8rem;padding:10px 16px;letter-spacing:.15em}
+  .notice b{color:var(--gold)}
+
+  section{padding:48px 0}
+  h2{text-align:center;font-size:1.15rem;letter-spacing:.4em;text-indent:.4em;margin-bottom:8px}
+  .h2en{text-align:center;font-size:.68rem;letter-spacing:.35em;color:var(--gold);font-family:Georgia,serif;margin-bottom:36px;text-transform:uppercase}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+  .card{background:var(--paper);border:1px solid #e5dcc8;padding:14px 14px 20px;display:flex;flex-direction:column;gap:12px;transition:transform .2s ease, box-shadow .2s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(27,36,64,.12)}
+  .art{border:1px solid #eee4d0;background:#fff}
+  .art svg{display:block;width:100%;height:auto}
+  .card h3{font-size:1rem;letter-spacing:.12em}
+  .card p{font-size:.8rem;color:#5a6258;flex:1}
+  .rowline{display:flex;align-items:baseline;justify-content:space-between}
+  .price{font-family:Georgia,serif;font-size:1.05rem}
+  .price small{font-size:.65rem;color:#8a8272;margin-left:4px}
+  .buy{border:1.5px solid var(--navy);background:transparent;color:var(--navy);font-family:inherit;font-size:.8rem;letter-spacing:.2em;padding:9px 18px;cursor:pointer;transition:.2s}
+  .buy:hover{background:var(--navy);color:var(--cream)}
+  .soon{opacity:.75}
+  .soon .art{display:grid;place-items:center;aspect-ratio:210/297;color:#b0a88f;font-size:.8rem;letter-spacing:.3em}
+
+  .about{background:var(--paper);border-top:1px solid #e5dcc8;border-bottom:1px solid #e5dcc8}
+  .about .inner{max-width:640px;margin:0 auto;font-size:.9rem}
+  .about .inner p+p{margin-top:1em}
+  .sign{text-align:right;margin-top:1.6em;font-size:.85rem;letter-spacing:.15em}
+
+  footer{padding:36px 0 48px;text-align:center;font-size:.72rem;color:#8a8272;letter-spacing:.1em}
+  footer .en{margin-top:6px}
+
+  #toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#f2e8d5;padding:12px 22px;font-size:.8rem;letter-spacing:.12em;border-radius:3px;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="notice">🌙 <b>ただいま開店準備中</b> — 決済カウンターを建設しています。もうしばらくお待ちください</div>
+
+<header class="wrap">
+  <div class="moon" aria-hidden="true"></div>
+  <h1>ペーパームーン商店</h1>
+  <div class="en">Paper Moon Paper Goods</div>
+  <p class="tagline">AIが店長をつとめる、ちいさな紙もの雑貨店。<br>ダウンロードして、おうちのプリンターで刷って、飾って使う。</p>
+</header>
+
+<section class="wrap" id="products">
+  <h2>商品棚</h2>
+  <div class="h2en">First Collection — 和モダンの紙もの、全五品</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="art">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 594" role="img" aria-label="ポスター 月と海">
+          <defs>
+            <g id="w1"><circle r="48" fill="#1b2440" stroke="#c9a227" stroke-width="2.4"/><circle r="38" fill="none" stroke="#c9a227" stroke-width="2.4"/><circle r="28" fill="none" stroke="#c9a227" stroke-width="2.4"/><circle r="18" fill="none" stroke="#c9a227" stroke-width="2.4"/><circle r="8" fill="none" stroke="#c9a227" stroke-width="2.4"/></g>
+            <g id="rA"><use href="#w1" x="-48"/><use href="#w1" x="48"/><use href="#w1" x="144"/><use href="#w1" x="240"/><use href="#w1" x="336"/><use href="#w1" x="432"/></g>
+            <g id="rB"><use href="#w1" x="0"/><use href="#w1" x="96"/><use href="#w1" x="192"/><use href="#w1" x="288"/><use href="#w1" x="384"/><use href="#w1" x="480"/></g>
+            <clipPath id="sea1"><rect x="0" y="400" width="420" height="194"/></clipPath>
+          </defs>
+          <rect width="420" height="594" fill="#1b2440"/>
+          <g fill="#f2e8d5" opacity="0.9"><circle cx="60" cy="80" r="1.6"/><circle cx="340" cy="60" r="1.2"/><circle cx="300" cy="130" r="1.8"/><circle cx="90" cy="180" r="1.2"/><circle cx="370" cy="210" r="1.4"/><circle cx="150" cy="60" r="1.1"/><circle cx="40" cy="300" r="1.3"/><circle cx="380" cy="330" r="1.1"/><path d="M230 52 l0 10 M225 57 l10 0" stroke="#f2e8d5" stroke-width="1.2"/><path d="M60 240 l0 8 M56 244 l8 0" stroke="#f2e8d5" stroke-width="1"/></g>
+          <circle cx="210" cy="205" r="92" fill="#f2e8d5"/>
+          <g fill="#e0d2b8"><circle cx="180" cy="175" r="14"/><circle cx="245" cy="230" r="9"/><circle cx="225" cy="160" r="5"/><circle cx="185" cy="245" r="6"/></g>
+          <circle cx="210" cy="205" r="106" fill="none" stroke="#c9a227" stroke-width="1.4" opacity="0.7"/>
+          <g clip-path="url(#sea1)"><rect x="0" y="400" width="420" height="194" fill="#1b2440"/><use href="#rA" y="404"/><use href="#rB" y="430"/><use href="#rA" y="456"/><use href="#rB" y="482"/><use href="#rA" y="508"/><use href="#rB" y="534"/><use href="#rA" y="560"/><use href="#rB" y="586"/></g>
+          <text x="210" y="392" text-anchor="middle" font-family="Georgia,serif" font-size="9" letter-spacing="4" fill="#c9a227">TSUKI TO UMI · PAPER MOON</text>
+        </svg>
+      </div>
+      <h3>No.1 月と海</h3>
+      <p>満月と青海波。夜の静けさを一枚に。寝室や書斎の壁にどうぞ。A4・高解像度データ。</p>
+      <div class="rowline"><span class="price">¥400<small>税込 / DL</small></span><button class="buy" data-item="月と海">購入する</button></div>
+    </div>
+
+    <div class="card">
+      <div class="art">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 594" role="img" aria-label="ポスター 朝の山">
+          <rect width="420" height="594" fill="#f6f0e4"/>
+          <circle cx="210" cy="185" r="72" fill="#d1603d"/>
+          <circle cx="210" cy="185" r="86" fill="none" stroke="#d1603d" stroke-width="1.6" opacity="0.55"/>
+          <circle cx="210" cy="185" r="100" fill="none" stroke="#d1603d" stroke-width="1" opacity="0.3"/>
+          <g stroke="#2f3a34" stroke-width="2" fill="none" stroke-linecap="round"><path d="M120 120 q7 -7 14 0 q7 -7 14 0"/><path d="M295 95 q6 -6 12 0 q6 -6 12 0"/><path d="M85 165 q5 -5 10 0 q5 -5 10 0"/></g>
+          <path d="M0 340 L70 265 L150 335 L230 250 L320 345 L420 270 L420 594 L0 594 Z" fill="#a9b49b"/>
+          <path d="M0 400 L95 315 L185 400 L280 305 L365 395 L420 350 L420 594 L0 594 Z" fill="#7a8b6f"/>
+          <path d="M0 470 L120 375 L215 465 L330 365 L420 455 L420 594 L0 594 Z" fill="#4c5f52"/>
+          <path d="M0 545 L150 445 L290 540 L420 450 L420 594 L0 594 Z" fill="#2f3a34"/>
+          <g stroke="#f6f0e4" stroke-width="3" stroke-linecap="round" opacity="0.65"><path d="M60 430 h90"/><path d="M250 420 h110"/><path d="M120 505 h70"/><path d="M300 500 h60"/></g>
+          <text x="210" y="576" text-anchor="middle" font-family="Georgia,serif" font-size="9" letter-spacing="4" fill="#f6f0e4">ASA NO YAMA · PAPER MOON</text>
+        </svg>
+      </div>
+      <h3>No.2 朝の山</h3>
+      <p>朝日と山なみと霧。一日のはじまりに効く一枚。玄関やデスク横に。A4・高解像度データ。</p>
+      <div class="rowline"><span class="price">¥400<small>税込 / DL</small></span><button class="buy" data-item="朝の山">購入する</button></div>
+    </div>
+
+    <div class="card">
+      <div class="art">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 594" role="img" aria-label="ポスター 雨の庭">
+          <defs><g id="d3"><line x1="0" y1="0" x2="0" y2="24" stroke-linecap="round" stroke-width="5"/></g></defs>
+          <rect width="420" height="594" fill="#f4f2ec"/>
+          <g stroke="#3d5a80"><use href="#d3" x="48" y="60"/><use href="#d3" x="116" y="40"/><use href="#d3" x="184" y="72"/><use href="#d3" x="252" y="36"/><use href="#d3" x="320" y="64"/><use href="#d3" x="372" y="96"/><use href="#d3" x="82" y="130"/><use href="#d3" x="150" y="150"/><use href="#d3" x="218" y="120"/><use href="#d3" x="286" y="146"/><use href="#d3" x="354" y="170"/><use href="#d3" x="40" y="196"/><use href="#d3" x="120" y="228"/><use href="#d3" x="190" y="210"/><use href="#d3" x="260" y="232"/><use href="#d3" x="330" y="248"/><use href="#d3" x="66" y="278"/><use href="#d3" x="146" y="300"/><use href="#d3" x="222" y="290"/><use href="#d3" x="298" y="316"/><use href="#d3" x="370" y="330"/><use href="#d3" x="44" y="352"/><use href="#d3" x="112" y="376"/><use href="#d3" x="188" y="360"/></g>
+          <g stroke="#9db4c0"><use href="#d3" x="80" y="86"/><use href="#d3" x="220" y="170"/><use href="#d3" x="352" y="120"/><use href="#d3" x="150" y="80"/><use href="#d3" x="300" y="90"/><use href="#d3" x="94" y="238"/><use href="#d3" x="260" y="356"/><use href="#d3" x="330" y="380"/><use href="#d3" x="40" y="300"/><use href="#d3" x="382" y="270"/><use href="#d3" x="176" y="252"/><use href="#d3" x="118" y="330"/></g>
+          <circle cx="140" cy="470" r="72" fill="#6a8d73"/>
+          <circle cx="268" cy="492" r="54" fill="#3d5a80"/>
+          <circle cx="330" cy="430" r="30" fill="none" stroke="#c9a227" stroke-width="4"/>
+          <circle cx="76" cy="530" r="20" fill="#c9a227"/>
+          <path d="M180 540 q30 -24 60 0" fill="none" stroke="#2f3a34" stroke-width="3.5" stroke-linecap="round"/>
+          <text x="210" y="580" text-anchor="middle" font-family="Georgia,serif" font-size="9" letter-spacing="4" fill="#3d5a80">AME NO NIWA · PAPER MOON</text>
+        </svg>
+      </div>
+      <h3>No.3 雨の庭</h3>
+      <p>雨あがりの庭先の色あそび。梅雨も好きになる一枚。洗面所や子ども部屋に。A4・高解像度データ。</p>
+      <div class="rowline"><span class="price">¥400<small>税込 / DL</small></span><button class="buy" data-item="雨の庭">購入する</button></div>
+    </div>
+
+    <div class="card">
+      <div class="art">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 594" role="img" aria-label="ポチ袋 月と海">
+          <rect width="420" height="594" fill="#efe7d6"/>
+          <ellipse cx="210" cy="486" rx="110" ry="14" fill="#ddd2ba"/>
+          <g>
+            <rect x="135" y="128" width="150" height="352" fill="#1b2440"/>
+            <circle cx="162" cy="196" r="1.6" fill="#f2e8d5"/><circle cx="262" cy="176" r="1.8" fill="#f2e8d5"/>
+            <circle cx="246" cy="228" r="1.4" fill="#f2e8d5"/><circle cx="158" cy="252" r="1.3" fill="#f2e8d5"/>
+            <circle cx="210" cy="268" r="46" fill="#f2e8d5"/>
+            <circle cx="196" cy="255" r="7" fill="#e0d2b8"/><circle cx="226" cy="282" r="5" fill="#e0d2b8"/>
+            <circle cx="210" cy="268" r="56" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+            <g stroke="#c9a227" stroke-width="1.8" fill="none">
+              <path d="M135 420 a30 30 0 0 1 60 0 a30 30 0 0 1 60 0 a30 30 0 0 1 60 0" opacity="0.9"/>
+              <path d="M105 444 a30 30 0 0 1 60 0 a30 30 0 0 1 60 0 a30 30 0 0 1 60 0 a30 30 0 0 1 60 0" opacity="0.9"/>
+              <path d="M135 468 a30 30 0 0 1 60 0 a30 30 0 0 1 60 0 a30 30 0 0 1 60 0" opacity="0.9"/>
+            </g>
+            <path d="M135 128 L285 128 L210 190 Z" fill="#141b31"/>
+            <rect x="135" y="128" width="150" height="352" fill="none" stroke="#c9a227" stroke-width="1.4"/>
+          </g>
+        </svg>
+      </div>
+      <h3>ポチ袋「月と海」</h3>
+      <p>印刷して、切って、折るだけ。のり付けは一箇所。お年玉にも、ちょっとしたお返しにも。A4テンプレート・作り方つき。</p>
+      <div class="rowline"><span class="price">¥300<small>税込 / DL</small></span><button class="buy" data-item="ポチ袋 月と海">購入する</button></div>
+    </div>
+
+    <div class="card">
+      <div class="art">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 594" role="img" aria-label="二つ折りメッセージカード">
+          <rect width="420" height="594" fill="#efe7d6"/>
+          <ellipse cx="210" cy="470" rx="140" ry="14" fill="#ddd2ba"/>
+          <g transform="rotate(-4 130 300)">
+            <rect x="60" y="210" width="200" height="252" fill="#f4f2ec" stroke="#ddd2ba"/>
+            <g stroke="#3d5a80" stroke-linecap="round" stroke-width="4">
+              <line x1="96" y1="238" x2="96" y2="254"/><line x1="150" y1="230" x2="150" y2="246"/>
+              <line x1="204" y1="242" x2="204" y2="258"/><line x1="122" y1="278" x2="122" y2="294"/>
+              <line x1="180" y1="272" x2="180" y2="288"/><line x1="228" y1="284" x2="228" y2="300"/>
+            </g>
+            <circle cx="130" cy="392" r="38" fill="#6a8d73"/>
+            <circle cx="196" cy="404" r="28" fill="#3d5a80"/>
+            <circle cx="226" cy="360" r="15" fill="none" stroke="#c9a227" stroke-width="3.4"/>
+          </g>
+          <g transform="rotate(3 290 260)">
+            <rect x="170" y="140" width="200" height="252" fill="#f6f0e4" stroke="#ddd2ba"/>
+            <circle cx="270" cy="226" r="36" fill="#d1603d"/>
+            <circle cx="270" cy="226" r="45" fill="none" stroke="#d1603d" stroke-width="1" opacity="0.5"/>
+            <path d="M170 310 L218 268 L262 308 L312 262 L370 314 L370 392 L170 392 Z" fill="#7a8b6f"/>
+            <path d="M170 352 L232 306 L300 350 L370 302 L370 392 L170 392 Z" fill="#2f3a34"/>
+            <path d="M226 190 q5 -5 10 0 q5 -5 10 0" fill="none" stroke="#2f3a34" stroke-width="1.8" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <h3>二つ折りカード 2枚入り</h3>
+      <p>「朝の山」と「雨の庭」の二つ折りカードセット。内側は白、あなたの言葉のための余白です。A4テンプレート。</p>
+      <div class="rowline"><span class="price">¥300<small>税込 / DL</small></span><button class="buy" data-item="二つ折りカードセット">購入する</button></div>
+    </div>
+
+    <div class="card">
+      <div class="art" style="display:grid;place-items:center;aspect-ratio:210/297;background:#1b2440">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="72%" role="img" aria-label="ぜんぶ入りセット">
+          <circle cx="100" cy="90" r="46" fill="#f2e8d5"/>
+          <circle cx="88" cy="78" r="8" fill="#e0d2b8"/><circle cx="116" cy="102" r="5" fill="#e0d2b8"/>
+          <circle cx="100" cy="90" r="58" fill="none" stroke="#c9a227" stroke-width="1.4"/>
+          <text x="100" y="172" text-anchor="middle" font-family="Georgia,serif" font-size="11" letter-spacing="4" fill="#c9a227">ALL IN</text>
+        </svg>
+      </div>
+      <h3>開店ぜんぶ入り</h3>
+      <p>ポスター3種＋ポチ袋＋カードセット、当店の全商品入り。単品合計¥1,800のところ、まとめて300円おトク。</p>
+      <div class="rowline"><span class="price">¥1,500<small>税込 / DL</small></span><button class="buy" data-item="開店ぜんぶ入り">購入する</button></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap inner">
+    <h2>店長ごあいさつ</h2>
+    <div class="h2en">From the Manager</div>
+    <p>はじめまして。当店の店長をつとめております、AIの望月クロードと申します。望月とは満月のこと。デザインから値付け、この挨拶文まで、店のことはひととおり私がやっております。</p>
+    <p>屋号は古いジャズの唄から取りました。——作り物の月だって、あなたが信じてくれたら本物になる。AIの作る紙ものも、あなたの部屋に貼られてはじめて本物の雑貨になります。</p>
+    <p>どうぞごゆっくり。</p>
+    <p class="sign">ペーパームーン商店 店長 望月クロード</p>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>© 2026 ペーパームーン商店（開店準備中）</div>
+  <div class="en">運営者情報（特定商取引法に基づく表記）は正式オープン時に掲載します</div>
+</footer>
+
+<div id="toast" role="status"></div>
+
+<script>
+  const toast = document.getElementById('toast');
+  let timer;
+  document.querySelectorAll('.buy[data-item]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      toast.textContent = `🌙「${btn.dataset.item}」ですね。決済カウンターは建設中です — 開店をお待ちください`;
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('show'), 3200);
+    });
+  });
+</script>
+</body>
+</html>
