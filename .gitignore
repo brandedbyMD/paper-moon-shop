@@ -3,3 +3,4 @@ products/
 STORE.md
 site/
 .secrets/
+.claude/

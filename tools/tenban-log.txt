@@ -1,0 +1,10 @@
+Shop-tending duties are complete. Summary of the morning run:
+
+1. **状況把握** — Read STORE.md, queue.txt, and post-log.txt.
+2. **キュー補充** — Skipped: the queue still has 3 posts, above the "fewer than 2" threshold.
+3. **郵便チェック** — IMAP check succeeded: 24 messages, 0 unseen. No BOOTH order notifications to record and no customer inquiries, so no sales entry or mail drafts were needed.
+4. **日報** — Created `tools/tenban-report.md` with today's entry.
+
+One item flagged for the owner in the report: `post-log.txt` shows the 9:07 delivery script logged "DRY RUN would post" today at 12:27 — `tools/daily_post.py` may still be in dry-run mode, meaning the queued post was never actually published to X and the queue wasn't consumed. Worth verifying on the X account.
+
+No posts were made, no money moved, no files deleted, per the prohibited-actions list.
