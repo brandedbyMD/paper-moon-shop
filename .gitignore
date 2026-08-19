@@ -4,3 +4,8 @@ STORE.md
 site/
 .secrets/
 .claude/
+CLAUDE.md
+tools/recall.py
+tools/__pycache__/
+tools/tenban-log.txt
+tools/tenban-report.md
